@@ -1,0 +1,15 @@
+<p>
+  hello works!
+</p>
+<div>
+  <p>this app is build by {{name}}</p>
+</div>
+<div>
+  <p>below are my skill set</p>
+  <div>
+    <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i"></skill-component>
+  </div>
+  <div>
+      <input-form (onSkillAdded)="addSkills($event)"></input-form>
+  </div>
+</div>
