@@ -7,7 +7,7 @@
 <div>
   <p>below are my skill set</p>
   <div>
-    <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i"></skill-component>
+    <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i" (itemDeleted)="getIndex($event)"></skill-component>
   </div>
   <div>
       <input-form (onSkillAdded)="addSkills($event)"></input-form>

@@ -13,6 +13,7 @@ export class InputFormComponent implements OnInit {
   addSkill (skill: HTMLInputElement): void {
     console.log(skill.value);
     this.onSkillAdded.emit(skill.value);
+    skill.value = '';
   }
 
   ngOnInit() {

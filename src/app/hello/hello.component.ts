@@ -19,7 +19,7 @@ export class HelloComponent implements OnInit {
   }
 
   getIndex(index: number) {
-    this.skillSet = this.skillSet.splice((index+1), 1);
+    this.skillSet.splice(index, 1);
   }
 
   ngOnInit() {

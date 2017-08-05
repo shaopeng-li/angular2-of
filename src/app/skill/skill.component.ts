@@ -12,7 +12,8 @@ export class SkillComponent implements OnInit {
 
   constructor() { }
 
-  deleteItem () : void {
+  deleteItem (e) : void {
+    e.preventDefault();
     this.itemDeleted.emit(this.index);
   }
 
