@@ -1,6 +1,12 @@
 <form>
-  <label for="skillName">Input skill to list:</label>
-  <input type="text" name="skillName" id="skillName" #skill>
+  <div>
+    <label for="skillName">Input skill to list:</label>
+    <input #skills type="text" name="skillName" id="skillName" (keyup)="0" required>
+  </div>
+  <div>
+    <label for="years">Years of exp:</label>
+    <input #years type="number" name="years" id="years" required>
+  </div>
 </form>
-<button (click)="addSkill(skill)">add skill</button>
+<button (click)="clickAdd(skills, years)">add term</button>
 

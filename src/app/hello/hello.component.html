@@ -1,15 +1,9 @@
-<p>
-  hello works!
-</p>
 <div>
-  <p>this app is build by {{name}}</p>
+  <h3>this app is build by {{name}}</h3>
 </div>
 <div>
-  <p>below are my skill set</p>
-  <div>
-    <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i" (itemDeleted)="getIndex($event)"></skill-component>
-  </div>
-  <div>
-      <input-form (onSkillAdded)="addSkills($event)"></input-form>
-  </div>
+  <h5>below are my skill set:</h5>
+  <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i" (itemDeleted)="getIndex($event)"></skill-component>
+  <hr>
+  <input-form (onSkillAdded)="addSkills($event)"></input-form>
 </div>

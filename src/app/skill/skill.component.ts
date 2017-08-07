@@ -3,14 +3,18 @@ import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 @Component({
   selector: 'skill-component',
   templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.css']
+  styleUrls: ['./skill.component.css'],
+  inputs: ['skill', 'index'],
+  outputs: ['itemDeleted']
 })
 export class SkillComponent implements OnInit {
-  @Input() skill: string;
-  @Input() index: number;
-  @Output() itemDeleted = new EventEmitter<number>();
+  skill: string;
+  index: number;
+  itemDeleted: EventEmitter<number>;
 
-  constructor() { }
+  constructor() {
+    this.itemDeleted = new EventEmitter<number>();
+  }
 
   deleteItem (e) : void {
     e.preventDefault();

@@ -11,7 +11,7 @@ export class HelloComponent implements OnInit {
 
   constructor() {
     this.name = 'Shaopeng Li';
-    this.skillSet = ['angularjs', 'react', 'redux', 'jquery', 'bootstrap', 'sass', 'js'];
+    this.skillSet = [];
   }
 
   addSkills(skill: string) {

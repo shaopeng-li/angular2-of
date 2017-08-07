@@ -3,17 +3,30 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'input-form',
   templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css']
+  styleUrls: ['./input-form.component.css'],
+  outputs: ['onSkillAdded']
 })
 export class InputFormComponent implements OnInit {
-  @Output() onSkillAdded = new EventEmitter<string>();
+  onSkillAdded: EventEmitter<object>;
 
-  constructor() { }
+  constructor() {
+    this.onSkillAdded = new EventEmitter<object>();
+  }
 
   addSkill (skill: HTMLInputElement): void {
     console.log(skill.value);
-    this.onSkillAdded.emit(skill.value);
-    skill.value = '';
+
+  }
+
+  clickAdd (skill: HTMLInputElement, year: HTMLInputElement): void {
+      var newSkill = {};
+      newSkill['skillName'] = skill.value;
+      newSkill['numYears'] = year.value;
+
+      this.onSkillAdded.emit(newSkill);
+
+      skill.value = '';
+      year.value = '';
   }
 
   ngOnInit() {
