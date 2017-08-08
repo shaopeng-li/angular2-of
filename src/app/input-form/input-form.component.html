@@ -1,12 +1,22 @@
-<form>
-  <div>
-    <label for="skillName">Input skill to list:</label>
-    <input type="text" name="skillName" id="skillName" [(ngModel)]="skill" (keyup)="0" required>
-  </div>
-  <div>
-    <label for="years">Years of exp:</label>
-    <input type="number" name="years" [(ngModel)]="year" id="years" required>
-  </div>
-</form>
-<button (click)="clickAdd()">add term</button>
+<div class="container">
+  <h3>Input form</h3>
+  <form #skillForm="ngForm" (ngSubmit)="onSubmit(); skillForm.reset()">
+    <div class="form-group">
+      <label for="skillName">Input skill to list:</label>
+      <input type="text" name="skillName" id="skillName" class="form-control" [(ngModel)]="skill" (keyup)="0" #skillCtl="ngModel" required>
+      <div [hidden]="skillCtl.valid || skillCtl.pristine" class="alert alert-danger" >
+        Skill name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="years">Years of exp:</label>
+      <input type="number" name="years" [(ngModel)]="year" class="form-control" id="years" #yearsCtl="ngModel" required>
+      <div [hidden]="yearsCtl.valid || yearsCtl.pristine" class="alert alert-danger" >
+        years is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!skillForm.form.valid">add term</button>
+  </form>
+</div>
 

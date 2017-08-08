@@ -22,7 +22,7 @@ export class InputFormComponent implements OnInit {
     console.log(skill.value);
   }
 
-  clickAdd (): void {
+  onSubmit (): void {
       this.skillObj = new Skill(this.skill, this.year);
       this.onSkillAdded.emit(this.skillObj);
 
