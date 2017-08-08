@@ -13,13 +13,12 @@ export class InputFormComponent implements OnInit {
   skill: string;
   year: number;
   skillObj: Skill;
+  dateList: string[];
+  dayList: string[];
 
   constructor() {
     this.onSkillAdded = new EventEmitter<object>();
-  }
-
-  addSkill (skill: HTMLInputElement): void {
-    console.log(skill.value);
+    this.dayList = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat'];
   }
 
   onSubmit (): void {
@@ -31,6 +30,16 @@ export class InputFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    let dateList: string[] = [];
+    let current = Date.now();
+    for (let i = 0; i < 7; i++) {
+       let currentDay = new Date(current);
+       let str = "";
+       str = `${this.dayList[currentDay.getDay()]} ${currentDay.getMonth() + 1}/${currentDay.getDate()}/${currentDay.getFullYear()}`;
+       dateList.push(str);
+       current -= 864e5;
+    }
+    this.dateList = dateList;
   }
 
 }
