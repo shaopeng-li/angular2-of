@@ -1,9 +1,12 @@
-<div>
-  {{skill.skillName}}
+<div class="row">
+  <div class="col-md-6">
+    {{skill.skillName}}
+  </div>
+  <div class="col-md-3">
+    {{skill.numYears}}
+  </div>
+  <div class="col-md-3">
+    <a href="#" (click)="deleteItem($event)">delete</a>
+  </div>
 </div>
-<div>
-  {{skill.numYears}}
-</div>
-<div>
-  <a href="#" (click)="deleteItem($event)">delete</a>
-</div>
+
