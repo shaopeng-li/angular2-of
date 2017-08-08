@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Skill } from '../model/skill';
 
 @Component({
   selector: 'app-hello',
@@ -7,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
   name: string;
-  skillSet: string[];
+  skillSet: Skill[];
 
   constructor() {
     this.name = 'Shaopeng Li';
     this.skillSet = [];
   }
 
-  addSkills(skill: string) {
+  addSkills(skill: Skill) {
     this.skillSet.push(skill);
   }
 

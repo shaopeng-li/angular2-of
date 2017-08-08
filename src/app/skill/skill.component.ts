@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import { Skill } from '../model/skill';
 
 @Component({
   selector: 'skill-component',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
   outputs: ['itemDeleted']
 })
 export class SkillComponent implements OnInit {
-  skill: string;
+  skill: Skill;
   index: number;
   itemDeleted: EventEmitter<number>;
 
