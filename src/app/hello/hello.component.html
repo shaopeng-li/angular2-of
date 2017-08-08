@@ -2,7 +2,8 @@
   <h3>this app is build by {{name}}</h3>
 </div>
 <div>
-  <h5>below are my skill set:</h5>
+  <h5 *ngIf="skillSet.length > 0">below are my skill set:</h5>
+  <h5 *ngIf="skillSet.length === 0">Currently there is no skill on my list</h5>
   <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i" (itemDeleted)="getIndex($event)"></skill-component>
   <hr>
   <input-form (onSkillAdded)="addSkills($event)"></input-form>

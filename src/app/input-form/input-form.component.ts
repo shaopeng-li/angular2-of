@@ -8,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class InputFormComponent implements OnInit {
   onSkillAdded: EventEmitter<object>;
+  skill: string;
+  year: number;
 
   constructor() {
     this.onSkillAdded = new EventEmitter<object>();
@@ -18,15 +20,15 @@ export class InputFormComponent implements OnInit {
 
   }
 
-  clickAdd (skill: HTMLInputElement, year: HTMLInputElement): void {
+  clickAdd (): void {
       var newSkill = {};
-      newSkill['skillName'] = skill.value;
-      newSkill['numYears'] = year.value;
+      newSkill['skillName'] = this.skill;
+      newSkill['numYears'] = this.year;
 
       this.onSkillAdded.emit(newSkill);
 
-      skill.value = '';
-      year.value = '';
+      this.skill = '';
+      this.year = undefined;
   }
 
   ngOnInit() {
