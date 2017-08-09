@@ -1,5 +1,8 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Skill } from '../model/skill';
+import { DayList } from '../model/date';
+import { MonthList } from '../model/date';
+import { DayMillisec } from '../model/date';
 
 
 @Component({
@@ -18,7 +21,7 @@ export class InputFormComponent implements OnInit {
 
   constructor() {
     this.onSkillAdded = new EventEmitter<object>();
-    this.dayList = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat'];
+    this.dayList = DayList;
   }
 
   onSubmit (): void {
@@ -35,9 +38,9 @@ export class InputFormComponent implements OnInit {
     for (let i = 0; i < 7; i++) {
        let currentDay = new Date(current);
        let str = "";
-       str = `${this.dayList[currentDay.getDay()]} ${currentDay.getMonth() + 1}/${currentDay.getDate()}/${currentDay.getFullYear()}`;
+       str = `${this.dayList[currentDay.getDay()]} ${MonthList[currentDay.getMonth()]}/${currentDay.getDate()}/${currentDay.getFullYear()}`;
        dateList.push(str);
-       current -= 864e5;
+       current -= DayMillisec;
     }
     this.dateList = dateList;
   }
