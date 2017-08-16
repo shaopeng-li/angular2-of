@@ -20,7 +20,7 @@ import { ShowHideDirectiveDirective } from './showHideDrective/show-hide-directi
     SkillComponent,
     ReqestComponent,
     HighlightDirectiveDirective,
-    ShowHideDirectiveDirective,
+    ShowHideDirectiveDirective
   ],
   imports: [
     BrowserModule,

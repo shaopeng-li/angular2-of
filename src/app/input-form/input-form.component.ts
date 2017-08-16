@@ -58,6 +58,10 @@ export class InputFormComponent implements OnInit {
     this.dateList = dateList;
   }
 
+  detectInputChange (event: KeyboardEvent) {
+    console.log(event);
+  }
+
   ngOnInit() {
 
   }

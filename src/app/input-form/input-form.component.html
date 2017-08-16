@@ -3,7 +3,7 @@
   <form [formGroup]="skillForm" (ngSubmit)="onSubmit(); skillForm.reset()">
     <div class="form-group">
       <label for="skillName">Input skill to list:</label>
-      <input type="text" formControlName="skillName" id="skillName" class="form-control" [(ngModel)]="skill" required>
+      <input type="text" formControlName="skillName" id="skillName" class="form-control" [(ngModel)]="skill" required (keydown)="detectInputChange($event)">
       <div [hidden]="skillName.valid || skillName.pristine" class="alert alert-danger" >
         Skill name is required
       </div>
