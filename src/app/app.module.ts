@@ -9,6 +9,7 @@ import { HelloComponent } from './hello/hello.component';
 import { InputFormComponent } from './input-form/input-form.component';
 import { SkillComponent } from './skill/skill.component';
 import { ReqestComponent } from './reqest/reqest.component';
+import { HighlightDirectiveDirective } from './highLightDirective/highlight-directive.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReqestComponent } from './reqest/reqest.component';
     HelloComponent,
     InputFormComponent,
     SkillComponent,
-    ReqestComponent
+    ReqestComponent,
+    HighlightDirectiveDirective,
   ],
   imports: [
     BrowserModule,
