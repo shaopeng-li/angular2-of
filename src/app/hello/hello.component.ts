@@ -9,6 +9,7 @@ import { Skill } from '../model/skill';
 export class HelloComponent implements OnInit {
   name: string;
   skillSet: Skill[];
+  private condition = false;
 
   constructor() {
     this.name = 'Shaopeng Li';
@@ -21,6 +22,10 @@ export class HelloComponent implements OnInit {
 
   getIndex(index: number) {
     this.skillSet.splice(index, 1);
+  }
+
+  toggleCondition () {
+    this.condition = !this.condition;
   }
 
   ngOnInit() {

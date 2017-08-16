@@ -14,4 +14,7 @@
   <input-form (onSkillAdded)="addSkills($event)"></input-form>
 </div>
 <hr>
-<app-reqest></app-reqest>
+<div>
+  <button class="btn btn-default" (click)="toggleCondition()">Toggle reqest result</button>
+</div>
+<app-reqest *showHideDirective="condition"></app-reqest>
