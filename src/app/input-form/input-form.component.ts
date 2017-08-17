@@ -59,7 +59,10 @@ export class InputFormComponent implements OnInit {
   }
 
   detectInputChange (event: KeyboardEvent) {
-    console.log(event);
+    if (event.key === "Enter") {
+      this.onSubmit();
+      this.skillForm.reset();
+    }
   }
 
   ngOnInit() {
