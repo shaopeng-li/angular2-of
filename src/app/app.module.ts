@@ -11,6 +11,7 @@ import { SkillComponent } from './skill/skill.component';
 import { ReqestComponent } from './reqest/reqest.component';
 import { HighlightDirectiveDirective } from './highLightDirective/highlight-directive.directive';
 import { ShowHideDirectiveDirective } from './showHideDrective/show-hide-directive.directive';
+import { FormatPipePipe } from './formatPipe/format-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShowHideDirectiveDirective } from './showHideDrective/show-hide-directi
     SkillComponent,
     ReqestComponent,
     HighlightDirectiveDirective,
-    ShowHideDirectiveDirective
+    ShowHideDirectiveDirective,
+    FormatPipePipe
   ],
   imports: [
     BrowserModule,

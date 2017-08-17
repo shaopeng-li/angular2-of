@@ -3,7 +3,7 @@
     {{skill.skillName}}
   </div>
   <div class="col-md-3">
-    {{skill.numYears}}
+    {{skill.numYears | formatPipe}}
   </div>
   <div class="col-md-3">
     <a href="#" (click)="deleteItem($event)">delete</a>
