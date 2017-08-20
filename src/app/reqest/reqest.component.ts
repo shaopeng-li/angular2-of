@@ -1,20 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import {Http, Response} from '@angular/http';
+import { requestService } from '../share/serverRequest.service';
+import {Response} from '@angular/http';
+import {loggingService} from '../share/logging.service';
+
 
 @Component({
   selector: 'app-reqest',
   templateUrl: './reqest.component.html',
-  styleUrls: ['./reqest.component.css']
+  styleUrls: ['./reqest.component.css'],
+  providers: [loggingService, requestService]
 })
 export class ReqestComponent implements OnInit {
   data: Object;
   loading: boolean;
 
-  constructor(private http: Http) { }
+  constructor(private loggingService: loggingService, private requestService: requestService) { }
 
   makeRequest (): void {
     this.loading = true;
-    this.http.request('https://swapi.co/api/people').subscribe((res: Response) => {
+    var url = 'https://swapi.co/api/people';
+
+    this.requestService.getRequest(url).subscribe((res: Response) => {
       this.data = res.json();
       this.loading = false;
     },
@@ -27,8 +33,8 @@ export class ReqestComponent implements OnInit {
           // The response body may contain clues as to what went wrong,
           console.log(`Backend return code ${err.status}, body was: ${err.error}`);
         }
-      }
-    )
+    });
+    this.loggingService.logStatusChange(url);
   }
 
 
