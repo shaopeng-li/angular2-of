@@ -1,10 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Drugs search
-  </h1>
-</div>
-<ul>
-  <app-hello></app-hello>
-</ul>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Drug Search</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a routerLink="/landing" routerLinkActive="active" class="nav-item active">Landing Page</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/skillList" routerLinkActive="active">SkillList Page</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/searching" routerLinkActive="active">Searching Page</a>
+          </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+
 

@@ -1,20 +1,17 @@
-<div>
-  <h3 [highlightDirective]="'orange'">this app is build by {{name}}</h3>
-</div>
-<div>
-  <h5 *ngIf="skillSet.length > 0; else elseBlock">below are my skill set:</h5>
-  <ng-template #elseBlock>Currently there is no skill on the list</ng-template>
-  <div class="row" *ngIf="skillSet.length > 0">
-    <div class="col-md-6">Skill Name</div>
-    <div class="col-md-3">Years of Exp</div>
-    <div class="col-md-3"></div>
+<div style="margin-top: 100px">
+  <div style="text-align:center">
+    <h1>
+      Drugs search
+    </h1>
   </div>
-  <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i" (itemDeleted)="getIndex($event)"></skill-component>
+  <div style="text-align:center">
+    <h3 [highlightDirective]="'orange'">this app is build by {{name}}</h3>
+  </div>
   <hr>
-  <input-form (onSkillAdded)="addSkills($event)"></input-form>
+  <div>
+    <button class="btn btn-default" (click)="toggleCondition()">Toggle reqest result</button>
+  </div>
+  <app-reqest *showHideDirective="condition"></app-reqest>
 </div>
-<hr>
-<div>
-  <button class="btn btn-default" (click)="toggleCondition()">Toggle reqest result</button>
-</div>
-<app-reqest *showHideDirective="condition"></app-reqest>
+
+
