@@ -1,32 +1,25 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators} from '@angular/forms';
-import { Skill } from '../model/skill';
 import { DayList, MonthList, DayMillisec} from '../model/date';
+import {SkillList} from '../share/skillList.service';
 
 @Component({
   selector: 'input-form',
   templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css'],
-  outputs: ['onSkillAdded']
+  styleUrls: ['./input-form.component.css']
 })
 export class InputFormComponent implements OnInit {
-  onSkillAdded: EventEmitter<object>;
   skill: string;
   year: number;
-  skillObj: Skill;
   dateList: string[];
   dayList: string[];
   skillForm: FormGroup;
   skillName: AbstractControl;
   years: AbstractControl;
 
-  constructor(private fb: FormBuilder) {
-    this.onSkillAdded = new EventEmitter<object>();
-    this.dayList = DayList;
-    this.createDate();
-    this.createForm();
-  }
+  constructor(private fb: FormBuilder, private sl: SkillList) {}
 
+  // initial form contorl
   createForm (): void {
     this.skillForm = this.fb.group({
       skillName: ['', Validators.required],
@@ -37,14 +30,7 @@ export class InputFormComponent implements OnInit {
     this.years = this.skillForm.controls['years'];
   }
 
-  onSubmit (): void {
-      this.skillObj = new Skill(this.skill, this.year);
-      this.onSkillAdded.emit(this.skillObj);
-
-      this.skill = '';
-      this.year = undefined;
-  }
-
+  // initial date
   createDate (): void {
     let dateList: string[] = [];
     let current = Date.now();
@@ -58,6 +44,16 @@ export class InputFormComponent implements OnInit {
     this.dateList = dateList;
   }
 
+  onSubmit (): void {
+      // add skill through service, and store skill list inside service
+      this.sl.addSkill(this.skill, this.year);
+
+      this.skill = '';
+      this.year = undefined;
+  }
+
+
+
   detectInputChange (event: KeyboardEvent) {
     if (event.key === "Enter") {
       this.onSubmit();
@@ -66,7 +62,10 @@ export class InputFormComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // get static content day list from service
+    this.dayList = DayList;
+    this.createDate();
+    this.createForm();
   }
 
 }

@@ -13,6 +13,7 @@ import {loggingService} from '../share/logging.service';
 export class ReqestComponent implements OnInit {
   data: Object;
   loading: boolean;
+  private condition = false;
 
   constructor(private loggingService: loggingService, private requestService: requestService) { }
 
@@ -37,6 +38,10 @@ export class ReqestComponent implements OnInit {
     this.loggingService.logStatusChange(url);
   }
 
+  // toggle request result block
+  toggleCondition () {
+    this.condition = !this.condition;
+  }
 
   ngOnInit() {
   }

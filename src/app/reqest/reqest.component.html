@@ -1,6 +1,12 @@
-<div>
-  <h2>Request part</h2>
-  <button type="button" (click)="makeRequest()" class="btn btn-default">make a request</button>
-  <div *ngIf="loading">Loading...</div>
-  <pre>{{data | json}}</pre>
+<div class="row main">
+  <div>
+    <button class="btn btn-primary" (click)="toggleCondition()">Toggle reqest result</button>
+  </div>
+  <hr>
+  <div *showHideDirective="condition">
+    <h2>Request part</h2>
+    <button type="button" (click)="makeRequest()" class="btn btn-default">make a request</button>
+    <div *ngIf="loading">Loading...</div>
+    <pre>{{data | json}}</pre>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Skill } from '../model/skill';
+
 
 @Component({
   selector: 'app-hello',
@@ -7,26 +7,7 @@ import { Skill } from '../model/skill';
   styleUrls: ['./hello.component.css']
 })
 export class HelloComponent implements OnInit {
-  name: string;
-  skillSet: Skill[];
-  private condition = false;
-
-  constructor() {
-    this.name = 'Shaopeng Li';
-    this.skillSet = [];
-  }
-
-  addSkills(skill: Skill) {
-    this.skillSet.push(skill);
-  }
-
-  getIndex(index: number) {
-    this.skillSet.splice(index, 1);
-  }
-
-  toggleCondition () {
-    this.condition = !this.condition;
-  }
+  name:string = "Shaopeng Li";
 
   ngOnInit() {
   }
