@@ -10,7 +10,7 @@ export class SkillList{
 
   addSkill (skill:string, year:number) {
     console.log(`service called and skill is: ${skill} year is ${year}`);
-    this.skillObj = new Skill(skill, year);
+    this.skillObj = new Skill(this.skillSet.length + 1, skill, year);
     this.skillSet.push(this.skillObj);
     console.log(this.skillSet);
   }
