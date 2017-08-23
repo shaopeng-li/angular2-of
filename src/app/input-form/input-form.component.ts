@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators} from '@angular/forms';
 import { DayList, MonthList, DayMillisec} from '../model/date';
 import {SkillList} from '../share/skillList.service';

@@ -1,14 +1,14 @@
 <div class="row" (click)="showDetail()">
-  <div class="col-md-3">
+  <div class="col-md-2">
   	{{skill.id}}
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     {{skill.skillName}}
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     {{skill.numYears | formatPipe}}
   </div>
-  <div class="col-md-3">
+  <div class="col-md-2 operation btn btn-danger">
     <a href="#" (click)="deleteItem($event)">delete</a>
   </div>
 </div>

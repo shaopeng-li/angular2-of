@@ -3,5 +3,22 @@ a {
 }
 
 .row {
-	border: 3px solid grey;
+	border: 3px solid #1b88bf;
+  border-radius: 10px;
+  background-color: aliceblue;
+  cursor: pointer;
+  font-family: cursive;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.operation {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.operation a {
+  color: white;
+  font-family: monospace;
 }

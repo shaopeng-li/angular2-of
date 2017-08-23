@@ -1,19 +1,22 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8">
-      <h5 *ngIf="skillSet.length > 0; else elseBlock">below are my skill set:</h5>
-      <ng-template #elseBlock>Currently there is no skill on the list</ng-template>
-
-      <div class="row" *ngIf="skillSet.length > 0">
-        <div class="col-md-3">ID</div>
-        <div class="col-md-3">Skill Name</div>
-        <div class="col-md-3">Years of Exp</div>
-        <div class="col-md-3"></div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="header">
+        <h2 *ngIf="skillSet.length > 0; else elseBlock">Below are my skill set:</h2>
+        <ng-template #elseBlock>Currently there is no skill on the list</ng-template>
       </div>
-
-      <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i"></skill-component>
-
+      <div class="row tag-list" *ngIf="skillSet.length > 0">
+        <div class="col-md-2 tag">ID</div>
+        <div class="col-md-4 tag">Skill Name</div>
+        <div class="col-md-4 tag">Years of Exp</div>
+        <div class="col-md-2 tag"></div>
+      </div>
+      <div>
+        <skill-component *ngFor="let term of skillSet; let i=index" [skill]="term" [index]="i"></skill-component>
+      </div>
       <hr>
-      <input-form></input-form>
+      <div class="row">
+        <input-form></input-form>
+      </div>
 
   </div>
 </div>

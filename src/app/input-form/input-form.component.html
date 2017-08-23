@@ -1,27 +1,28 @@
-<div class="container">
-  <h3>Input form</h3>
+<div class="container row">
   <form [formGroup]="skillForm" (ngSubmit)="onSubmit(); skillForm.reset()">
-    <div class="form-group">
+    <div class="form-group col-md-10">
       <label for="skillName">Input skill to list:</label>
       <input type="text" formControlName="skillName" id="skillName" class="form-control" [(ngModel)]="skill" required (keydown)="detectInputChange($event)">
       <div [hidden]="skillName.valid || skillName.pristine" class="alert alert-danger" >
         Skill name is required
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-10">
       <label for="years">Years of exp:</label>
       <input type="number" formControlName="years" [(ngModel)]="year" class="form-control" id="years" required>
       <div [hidden]="years.valid || years.pristine" class="alert alert-danger" >
         years is required
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-10">
       <label for="date">Added date</label>
       <select class="form-control" id="date">
         <option *ngFor="let day of dateList" [value]="day">{{day}}</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!skillForm.valid">add term</button>
+    <div class="form-group col-md-10">
+      <button type="submit" class="btn btn-primary" [disabled]="!skillForm.valid">Add term</button>
+    </div>
   </form>
 </div>
 

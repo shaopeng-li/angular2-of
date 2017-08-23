@@ -1,3 +1,14 @@
 .row {
   margin-top: 80px;
 }
+
+.tag-list {
+    font-size: 2rem;
+    font-family: fantasy;
+    margin-bottom: 1rem;
+}
+
+.header {
+  font-family: cursive;
+  font-size: 2rem;
+}
