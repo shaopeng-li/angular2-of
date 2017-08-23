@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import { Router } from '@angular/router';
 import { SkillList } from '../share/skillList.service';
 import { Skill } from '../model/skill';
 
@@ -12,11 +13,15 @@ export class SkillComponent implements OnInit {
   skill: Skill;
   index: number;
 
-  constructor(private sl: SkillList) {}
+  constructor(private sl: SkillList, private router: Router) {}
 
   deleteItem (e) : void {
     e.preventDefault();
     this.sl.deleteSkill(this.index);
+  }
+
+  showDetail(): void {
+    this.router.navigate(['/skillDetail', this.index+1]);
   }
 
   ngOnInit() {
