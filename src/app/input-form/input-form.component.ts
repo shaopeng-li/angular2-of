@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, AbstractControl, Validators} from '@angular/for
 import { DayList, MonthList, DayMillisec} from '../model/date';
 import {SkillList} from '../share/skillList.service';
 
+
 @Component({
   selector: 'input-form',
   templateUrl: './input-form.component.html',

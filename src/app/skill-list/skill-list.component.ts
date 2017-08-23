@@ -13,10 +13,16 @@ export class SkillListComponent implements OnInit {
   skillSet: Skill[];
 
   constructor(private sl: SkillList) {
-    this.skillSet = [];
+    this.skillSet = this.sl.skillSet;
   }
 
   ngOnInit() {
+    this.sl.dataUpdate.subscribe((list: Skill[]) => {
+      this.skillSet = list;
+    },
+    (err) => {
+      console.log('something wrong happen in this get skillList' + err);
+    })
   }
 
 }

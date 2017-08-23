@@ -1,6 +1,8 @@
 import {Skill} from '../model/skill';
+import {Subject} from 'rxjs/Subject';
 
 export class SkillList{
+  dataUpdate = new Subject();
   skillSet: Skill[];
   private skillObj: Skill;
 
@@ -12,10 +14,12 @@ export class SkillList{
     console.log(`service called and skill is: ${skill} year is ${year}`);
     this.skillObj = new Skill(this.skillSet.length + 1, skill, year);
     this.skillSet.push(this.skillObj);
-    console.log(this.skillSet);
+
+    this.dataUpdate.next(this.skillSet);
   }
 
   deleteSkill (index:number) {
     this.skillSet.splice(index, 1);
+    this.dataUpdate.next(this.skillSet);
   }
 }
