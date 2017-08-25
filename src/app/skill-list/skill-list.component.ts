@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
 import { SkillList } from '../share/skillList.service';
 import { Skill } from '../model/skill';
 
@@ -8,7 +7,7 @@ import { Skill } from '../model/skill';
   templateUrl: './skill-list.component.html',
   styleUrls: ['./skill-list.component.css']
 })
-export class SkillListComponent implements OnInit {
+export class SkillListComponent implements OnInit{
   name: string;
   skillSet: Skill[];
 

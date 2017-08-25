@@ -16,6 +16,7 @@ import { ShowHideDirectiveDirective } from './showHideDrective/show-hide-directi
 import { FormatPipePipe } from './formatPipe/format-pipe.pipe';
 import { SkillList } from './share/skillList.service';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -31,7 +32,8 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
     ShowHideDirectiveDirective,
     FormatPipePipe,
     SkillListComponent,
-    SkillDetailComponent
+    SkillDetailComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

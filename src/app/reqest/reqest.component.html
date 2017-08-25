@@ -7,6 +7,6 @@
     <h2>Request part</h2>
     <button type="button" (click)="makeRequest()" class="btn btn-default">make a request</button>
     <div *ngIf="loading">Loading...</div>
-    <pre>{{data | json}}</pre>
+    <pre *ngIf="data">{{data | json}}</pre>
   </div>
 </div>

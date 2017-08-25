@@ -22,6 +22,7 @@ export class SkillComponent implements OnInit {
 
   showDetail(): void {
     this.router.navigate(['/skillDetail', this.index+1]);
+    //this.router.navigate([this.index+1], {relativeTo: this.route});
   }
 
   ngOnInit() {
